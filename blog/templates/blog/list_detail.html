@@ -1,0 +1,32 @@
+{% extends 'course/base.html' %}
+
+
+<!-- -->
+{% block content %}
+
+{% if detail_lists %}
+
+      {% for detail_list in detail_lists %}
+
+   <div class="card border-info mb-3" style="max-width: 50em;">
+      <div class="card-header bg-info">
+      <h4>{{detail_list.title}}</h4>
+      </div>
+      <div class="card-body">
+         <p class="card-text ">{{detail_list.blog_description|truncatechars:100}}</p>
+         <a href="{% url 'detail-page' detail_list.id %}" class="btn btn-primary">Check detail</a>
+         <p>{{detail_list.date_posted}}
+      </div>
+   </div>
+
+   {% endfor %}
+
+{% else %}
+   <h1>Result not found</h1>
+
+
+{% endif %}
+
+
+{% endblock content %}   
+   

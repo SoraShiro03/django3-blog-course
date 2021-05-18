@@ -1,0 +1,23 @@
+{% extends 'course/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+{% for blog_list in blog_lists %}
+
+<div class="card border-info mb-3" style="max-width: 50em;">
+   <div class="card-header bg-info">
+   <h4>{{blog_list.title}}</h4>
+   </div>
+   <div class="card-body">
+      <p class="card-text ">{{blog_list.blog_description|truncatechars:100}}</p>
+      <a href="{% url 'detail-page' blog_list.id %}" class="btn btn-primary">Check Blog</a>
+      <p>{{blog_list.date_posted}}
+   </div>
+</div>
+
+{% endfor %}
+
+{% endblock content %}
+<!-- want to connect with url this link must be 'pagename' and id of for loop of data.-->

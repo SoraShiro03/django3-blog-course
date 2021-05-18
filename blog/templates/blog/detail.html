@@ -1,0 +1,13 @@
+{% extends 'course/base.html' %}
+
+{% block content %}
+<body class='bg-info'>
+<div class="font-weight-bold text-center bg-info">
+   <h2 class="text-dark">{{blog_id.title}}</h2>
+   <br>
+   <h6>{{blog_id.blog_description}}</h6>
+   <p class="font-weight-bold text-right">{{blog_id.date_posted}}</p>
+</div>
+
+</body>
+{% endblock content %}
